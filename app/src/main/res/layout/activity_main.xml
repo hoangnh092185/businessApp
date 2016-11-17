@@ -25,13 +25,13 @@
         android:textStyle="bold"
         android:layout_alignTop="@+id/ADXLogo"
         android:layout_centerHorizontal="true"
-        android:id="@+id/textView" />
+        android:id="@+id/appNameTextView" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Explore ADX "
-        android:id="@+id/exploreAdxbutton"
+        android:id="@+id/exploreAdxButton"
         android:background="@color/colorAccent"
         android:textColor="@color/colorTextIcons"
         android:layout_alignBottom="@+id/ADXLogo"
