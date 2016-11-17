@@ -8,33 +8,32 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import butterknife.Bind;
+import butterknife.ButterKnife;
+
 
 public class MainActivity extends AppCompatActivity {
-    private TextView mAppNameTextView;
-    private Button mExploreAdxButton;
-//    @Bind(R.id.appNameTextView) TextView mAppNameTextView;
+    @Bind(R.id.appNameTextView) TextView mAppNameTextView;
+    @Bind(R.id.exploreAdxButton) Button mExploreAdxButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
 
-        mAppNameTextView = (TextView) findViewById(R.id.appNameTextView);
+
         Typeface old_stamper = Typeface.createFromAsset(getAssets(), "fonts/old_stamper.ttf");
         mAppNameTextView.setTypeface(old_stamper);
 
+        mExploreAdxButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, AboutActivity.class);
+                startActivity(intent);
+            }
 
-            mExploreAdxButton = (Button) findViewById(R.id.exploreAdxButton);
-            mExploreAdxButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(MainActivity.this, AboutActivity.class);
-                    startActivity(intent);
-                }
-
-            });
-
-        }
-
+        });
     }
 
+}
